@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <layout> Labels.vue</layout>
-    </div>
+        <Layout> Labels.vue</Layout>
 </template>
 
 <script lang="ts">
