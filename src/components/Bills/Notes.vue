@@ -11,11 +11,7 @@
 
     @Component
     export default class Notes extends Vue {
-        value = ''
-        onInput(event: InputEvent){
-            const input = event.target as HTMLInputElement;
-            this.value = input.value;
-        }
+        value = '';
     }
 </script>
 

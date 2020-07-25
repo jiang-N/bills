@@ -3,21 +3,26 @@
         <NumberPad/>
         <Types/>
         <Notes/>
-        <Tags/>
+        <Tags :data-source="tags"/>
 
     </Layout>
 </template>
 
-<script lang="ts">
-    import NumberPad from '@/components/Bills/NumberPad.vue';
-    import Types from '@/components/Bills/Types.vue';
-    import Notes from '@/components/Bills/Notes.vue';
-    import Tags from '@/components/Bills/Tags.vue';
+<script>
+    import NumberPad from '@/components/Bills/NumberPad.vue'
+    import Types from '@/components/Bills/Types.vue'
+    import Notes from '@/components/Bills/Notes.vue'
+    import Tags from '@/components/Bills/Tags.vue'
 
     export default {
         name: 'Bills',
-        components: {Tags, Notes, Types, NumberPad}
-    };
+        components: {Tags, Notes, Types, NumberPad},
+        data() {
+            return {
+                tags: ['衣', '食', '住', '行', '玩']
+            }
+        }
+    }
 </script>
 
 <style lang="scss">
