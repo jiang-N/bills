@@ -16,13 +16,14 @@
     import Types from '@/components/Bills/Types.vue';
     import FormItem from '@/components/Bills/FormItem.vue';
     import Tags from '@/components/Bills/Tags.vue';
+    import store from '@/store/index2';
 
     @Component({
         components: {Tags, FormItem, Types, NumberPad}
     })
     export default class Bills extends Vue {
-        tags = window.tagList;
-        recordList = window.recordList;
+        tags = store.tagList;
+        recordList = store.recordList;
         record: RecordItem = {
             tags: [], notes: '', type: '-', amount: 0
         };
@@ -36,7 +37,7 @@
         }
 
         saveRecord() {
-            window.createRecord(this.record);
+            store.createRecord(this.record);
         }
     }
 </script>
