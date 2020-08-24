@@ -52,7 +52,6 @@ const tagStore = {
     },
     saveTags() {
         window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.tagList));
-
     }
 };
 
