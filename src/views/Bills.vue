@@ -16,23 +16,30 @@
     import Types from '@/components/Bills/Types.vue';
     import FormItem from '@/components/Bills/FormItem.vue';
     import Tags from '@/components/Bills/Tags.vue';
-    import store from '@/store/index2';
 
     @Component({
-        components: {Tags, FormItem, Types, NumberPad}
+        components: {Tags, FormItem, Types, NumberPad},
+        computed: {
+            recordList() {
+                return this.$store.state.recordList;
+            }
+        }
     })
     export default class Bills extends Vue {
-        recordList = store.recordList;
         record: RecordItem = {
             tags: [], notes: '', type: '-', amount: 0
         };
+
+        created() {
+            this.$store.commit('fetchRecords');
+        }
 
         onUpdateNotes(value: string) {
             this.record.notes = value;
         }
 
         saveRecord() {
-            store.createRecord(this.record);
+            this.$store.commit('createRecord', this.record);
         }
     }
 </script>
