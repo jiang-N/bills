@@ -13,14 +13,13 @@
     import Vue from 'vue';
     import {Component} from 'vue-property-decorator';
     import NumberPad from '@/components/Bills/NumberPad.vue';
-    import Types from '@/components/Bills/Types.vue';
     import FormItem from '@/components/Bills/FormItem.vue';
     import Tags from '@/components/Bills/Tags.vue';
     import Tabs from '@/components/Tabs.vue';
     import recordTypeList from '@/constants/recordTypeList';
 
     @Component({
-        components: {Tabs, Tags, FormItem, Types, NumberPad}
+        components: {Tabs, Tags, FormItem, NumberPad}
     })
     export default class Bills extends Vue {
         get recordList() {
