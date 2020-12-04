@@ -94,7 +94,12 @@ export default class Statistics extends Vue {
         type: 'category',
         data: keys,
         axisTick: {alignWithLabel: true},
-        axisLIne: {lineStyle: {color: '#666'}}
+        axisLIne: {lineStyle: {color: '#666'}},
+        axisLabel: {
+          formatter: function (value: string) {
+            return value.substr(5);
+          }
+        }
       },
       yAxis: {
         type: 'value',
